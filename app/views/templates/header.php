@@ -27,7 +27,13 @@ if (!isset($_SESSION['auth'])) {
         <div class="nav-right" style="display: flex; align-items: center; gap: 20px;">
             <a href="/home">Home</a>
             <a href="/about">About Me</a>
-            <a href="/reminders">Reminders</a>
+            <a href="/reminders">
+                Reminders 
+                <span class="badge bg-secondary">
+                    <?= isset($_SESSION['reminder_count']) ?                       $_SESSION['reminder_count'] : '0'; ?>
+                </span>
+            </a>
+
             <a href="/blog">Blog</a>
             <?php if (isset($_SESSION['username']) && $_SESSION['username'] === 'admin'): ?>
                 <a class="fw-bold text-danger" href="/reports">Reports</a>

@@ -5,6 +5,9 @@ class Reminders extends Controller {
     public function index() {
         $reminder = $this->model('Reminder');
         $list_of_reminders = $reminder->get_all_reminders();
+
+        $_SESSION['reminder_count'] = $reminder->count_reminders();
+
         $this->view('reminders/index', [
             'reminder' => $list_of_reminders,
         ]);
@@ -19,12 +22,14 @@ class Reminders extends Controller {
 
             if ($subject) {
                 $reminder->create_reminder($user_id, $subject);
+
+                $_SESSION['reminder_count'] = $reminder->count_reminders();
+
                 header("Location: /reminders/index");
                 exit;
             }
         }
     }
-
 
     public function update($id) {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -33,6 +38,7 @@ class Reminders extends Controller {
 
             if ($subject) {
                 $reminder->update_reminder($id, $subject);
+
                 header("Location: /reminders/index");
                 exit;
             }
@@ -42,6 +48,9 @@ class Reminders extends Controller {
     public function delete($id) {
         $reminder = $this->model('Reminder');
         $reminder->delete_reminder($id);
+
+        $_SESSION['reminder_count'] = $reminder->count_reminders();
+
         header("Location: /reminders/index");
         exit;
     }

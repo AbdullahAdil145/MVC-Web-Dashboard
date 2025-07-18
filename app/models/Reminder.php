@@ -35,4 +35,11 @@ class Reminder {
     public function complete_reminder($id) {
         return $this->delete_reminder($id);
     }
+
+    public function count_reminders() {
+        $db = db_connect();
+        $statement = $db->prepare("SELECT COUNT(*) FROM reminders WHERE user_id = ?;");
+        $statement->execute([$_SESSION['user_id']]);
+        return $statement->fetchColumn();
+    }
 }
