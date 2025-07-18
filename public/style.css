@@ -379,3 +379,15 @@ body.dark-mode .section-heading,
 body.dark-mode .reminder-date {
   color: #000 !important;
 }
+
+.page-title {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #000000; 
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin: 0;
+}
