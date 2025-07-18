@@ -41,7 +41,8 @@
                 </form>
             </div>
 
-            <p class="text-muted text-center mt-4">Copyright, &copy; 2025</p>
+							<?php include 'app/views/templates/footer.php'; ?>
+
 
         </div>
     </div>
