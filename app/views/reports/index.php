@@ -3,7 +3,6 @@
 <div class="container mt-5">
     <h2 class="mb-4 text-center">Reports Dashboard</h2>
 
-    <!-- All Reminders -->
     <div class="card mb-4">
         <div class="card-header bg-primary text-white fw-bold">
             All Reminders
@@ -32,12 +31,10 @@
         </div>
     </div>
 
-    <!-- User with Most Reminders -->
     <div class="alert alert-success fw-bold text-center">
         <?= htmlspecialchars($mostRemindersUser['username']); ?> has the most reminders (<?= $mostRemindersUser['total']; ?> reminders)
     </div>
 
-    <!-- Total Logins by User -->
     <div class="card">
         <div class="card-header bg-primary text-white fw-bold">
             Total Logins
@@ -63,7 +60,6 @@
     </div>
 </div>
 
-<!-- Load Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <div class="row mt-5">
