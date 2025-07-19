@@ -23,14 +23,22 @@
             <div style="margin-bottom: 40px;">
                 <form action="/create/submit" method="post">
                     <fieldset>
-                        <div class="form-group">
+                        <div class="form-group mb-3">
                             <label for="username">Username</label>
                             <input required type="text" class="form-control" name="username">
                         </div>
+
                         <div class="form-group">
                             <label for="password">Password</label>
                             <small class="form-text text-muted" style="margin-top: -4px; margin-bottom: 6px;">(Password must be at least 8 characters)</small>
-                            <input required type="password" class="form-control" name="password" minlength="8">
+                            <div class="input-group">
+                                <input required type="password" class="form-control" name="password" id="passwordField" minlength="8">
+                                <button type="button"
+                                        onclick="togglePassword()"
+                                        class="btn btn-outline-secondary">
+                                    Show
+                                </button>
+                            </div>
                         </div>
 
                         <br>
@@ -45,5 +53,20 @@
     </div>
 
 </main>
+
+<script>
+    function togglePassword() {
+        const passwordInput = document.getElementById('passwordField');
+        const toggleBtn = event.target;
+
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            toggleBtn.innerText = "Hide";
+        } else {
+            passwordInput.type = "password";
+            toggleBtn.innerText = "Show";
+        }
+    }
+</script>
 
 <?php require_once 'app/views/templates/footer.php'; ?>
