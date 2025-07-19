@@ -8,7 +8,7 @@ class App {
     protected $params = [];
 
     public function __construct() {
-        if (isset($_SESSION['auth']) == 1) {
+        if (isset($_SESSION['auth']) && $_SESSION['auth'] == 1) {
             $this->controller = 'home';
         } else {
             $this->controller = 'login';
@@ -33,6 +33,12 @@ class App {
         require_once 'app/controllers/' . $this->controller . '.php';
         $this->controller = new $this->controller;
 
+        if (isset($_SESSION['user_id'])) {
+            require_once 'app/models/Reminder.php';
+            $reminderModel = new Reminder();
+            $_SESSION['reminder_count'] = count($reminderModel->get_all_reminders());
+        }
+
         if (isset($url[2])) {
             if (method_exists($this->controller, $url[2])) {
                 $this->method = $url[2];
@@ -51,4 +57,5 @@ class App {
         unset($url[0]);
         return $url;
     }
+
 }
