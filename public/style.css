@@ -457,3 +457,19 @@ body.dark-mode .page-title {
     color: #ffffff !important;
     box-shadow: none;
 }
+
+body.dark-mode .container > div {
+    background-color: #333333 !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+}
+
+body.dark-mode .container > div h1,
+body.dark-mode .container > div h2,
+body.dark-mode .container > div p {
+    color: #ffffff !important;
+}
+
+body.dark-mode #weather-container p {
+    color: #ffffff !important;
+}
