@@ -434,6 +434,26 @@ h2, h4 {
     background-color: #f8f9fa;
 }
 
-body.dark-mode .reports-heading {
+body.dark-mode .container h2 {
     color: #ffffff !important;
+}
+
+.custom-footer {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+body.dark-mode nav {
+    background-color: #333333 !important;
+}
+
+body.dark-mode nav a,
+body.dark-mode .nav-left .nav-brand {
+    color: #ffffff !important;
+}
+
+body.dark-mode .page-title {
+    background-color: #333333 !important;
+    color: #ffffff !important;
+    box-shadow: none;
 }
