@@ -63,4 +63,40 @@
     </div>
 </div>
 
+<!-- Load Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="row mt-5">
+    <div class="col-md-12">
+        <h4 class="text-center">Total Logins by User</h4>
+        <canvas id="loginsChart"></canvas>
+    </div>
+</div>
+
+<script>
+    const loginLabels = <?= json_encode(array_column($loginCounts, 'username')); ?>;
+    const loginCounts = <?= json_encode(array_column($loginCounts, 'total_logins')); ?>;
+
+    const ctxLogins = document.getElementById('loginsChart').getContext('2d');
+    new Chart(ctxLogins, {
+        type: 'bar',
+        data: {
+            labels: loginLabels,
+            datasets: [{
+                label: 'Total Logins',
+                data: loginCounts,
+                backgroundColor: 'rgba(75, 192, 192, 0.7)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: { beginAtZero: true }
+            }
+        }
+    });
+</script>
+
+
 <?php require_once 'app/views/templates/footer.php'; ?>
