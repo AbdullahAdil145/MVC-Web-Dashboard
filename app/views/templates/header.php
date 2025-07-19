@@ -25,22 +25,38 @@
                 <a class="nav-brand" href="/">Dashboard</a>
 
                 <?php
-                    $uri = trim($_SERVER['REQUEST_URI'], '/');
-                    $segments = explode('/', $uri);
+                $uri = trim($_SERVER['REQUEST_URI'], '/');
+                $segments = explode('/', $uri);
 
-                    if ($uri !== '' && $uri !== 'home') {
-                        echo '<nav aria-label="breadcrumb" style="display: inline-block; margin-left: 5px;">';
-                        echo '<ol class="breadcrumb mb-0" style="background: transparent; font-size: 0.85rem; color: grey;">';
-                        echo '<li class="breadcrumb-item"><a href="/home" style="color: grey; text-decoration: none;">Home</a></li>';
+                if ($uri !== '' && $uri !== 'home') {
+                    echo '<div style="
+                        background: #f0f0f0;
+                        padding: 6px 12px;
+                        border-radius: 10px;
+                        display: inline-block;
+                        margin-left: 5px;
+                        font-size: 1rem;
+                        font-weight: 500;
+                        color: inherit;
+                    ">';
 
-                        if (!empty($segments[0])) {
-                            echo '<li class="breadcrumb-item active text-muted" aria-current="page" style="color: grey;">' . ucfirst(htmlspecialchars($segments[0])) . '</li>';
-                        }
+                    echo '<nav aria-label="breadcrumb" style="margin: 0;">';
+                    echo '<ol class="breadcrumb mb-0" style="background: transparent; margin: 0;">';
+                    echo '<li class="breadcrumb-item">';
+                    echo '<a href="/home" style="color: inherit; text-decoration: none; font-weight: 500;">Home</a>';
+                    echo '</li>';
 
-                        echo '</ol>';
-                        echo '</nav>';
+                    if (!empty($segments[0])) {
+                        echo '<li class="breadcrumb-item active" aria-current="page" style="color: inherit; font-weight: 500;">' . ucfirst(htmlspecialchars($segments[0])) . '</li>';
                     }
+
+                    echo '</ol>';
+                    echo '</nav>';
+
+                    echo '</div>';
+                }
                 ?>
+
             </div>
 
             <div class="nav-right" style="display: flex; align-items: center; gap: 20px;">
