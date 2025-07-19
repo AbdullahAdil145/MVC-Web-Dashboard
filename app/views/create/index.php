@@ -47,8 +47,6 @@
                 </form>
             </div>
 
-            <p class="text-muted text-center" style="margin-top: 20px;">&copy; 2025</p>
-
         </div>
     </div>
 
