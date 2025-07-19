@@ -42,4 +42,24 @@ class Reminder {
         $statement->execute([$_SESSION['user_id']]);
         return $statement->fetchColumn();
     }
+
+    public function get_all_reminders_admin() {
+        $db = db_connect();
+        $stmt = $db->query("SELECT * FROM reminders");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function user_with_most_reminders() {
+        $db = db_connect();
+        $stmt = $db->query("
+            SELECT users.username, COUNT(reminders.id) AS total
+            FROM reminders
+            JOIN users ON reminders.user_id = users.id
+            GROUP BY users.username
+            ORDER BY total DESC
+            LIMIT 1
+        ");
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
 }

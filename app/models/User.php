@@ -106,4 +106,16 @@ class User {
         $statement->bindValue(':password', $hashedPassword);
         $statement->execute();
     }
+
+    public function get_login_counts() {
+        $db = db_connect();
+        $stmt = $db->query("
+            SELECT username, COUNT(*) AS total_logins
+            FROM logins
+            GROUP BY username
+        ");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
 }
