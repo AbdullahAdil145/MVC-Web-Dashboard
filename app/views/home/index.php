@@ -34,3 +34,5 @@ fetch("https://api.open-meteo.com/v1/forecast?latitude=43.65107&longitude=-79.34
     document.getElementById("weather-container").innerText = "Unable to fetch weather data.";
   });
 </script>
+
+<?php require_once 'app/views/templates/footer.php'; ?>

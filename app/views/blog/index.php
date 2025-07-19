@@ -24,3 +24,5 @@
     <?php endforeach; ?>
   </div>
 </section>
+
+<?php require_once 'app/views/templates/footer.php'; ?>

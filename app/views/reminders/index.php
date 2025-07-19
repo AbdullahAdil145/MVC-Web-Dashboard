@@ -64,3 +64,5 @@ function cancelEdit(id, subject) {
   textEl.innerHTML = subject;
 }
 </script>
+
+<?php require_once 'app/views/templates/footer.php'; ?>

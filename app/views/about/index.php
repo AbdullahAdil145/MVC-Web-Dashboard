@@ -21,3 +21,5 @@
         I've contributed to impactful projects, including Chrome extensions that streamline job applications and a full-stack hotel management system with authentication and role-based access. I thrive in collaborative environments, bringing a balance of technical skill, creative problem-solving, and attention to user experience.
     </p>
 </div>
+
+<?php require_once 'app/views/templates/footer.php'; ?>

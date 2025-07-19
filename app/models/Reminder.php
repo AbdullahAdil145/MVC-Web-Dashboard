@@ -45,9 +45,14 @@ class Reminder {
 
     public function get_all_reminders_admin() {
         $db = db_connect();
-        $stmt = $db->query("SELECT * FROM reminders");
+        $stmt = $db->query("
+            SELECT reminders.id, reminders.user_id, users.username, reminders.subject, reminders.created_at
+            FROM reminders
+            JOIN users ON reminders.user_id = users.id
+        ");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
 
     public function user_with_most_reminders() {
         $db = db_connect();
