@@ -391,3 +391,49 @@ body.dark-mode .reminder-date {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   margin: 0;
 }
+
+.card {
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.card-header {
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+.table th,
+.table td {
+    font-size: 0.95rem;
+    vertical-align: middle;
+    text-align: center;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+
+h2, h4 {
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.alert-success {
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.table thead th {
+    position: sticky;
+    top: 0;
+    background-color: #f8f9fa;
+}
+
+body.dark-mode .reports-heading {
+    color: #ffffff !important;
+}

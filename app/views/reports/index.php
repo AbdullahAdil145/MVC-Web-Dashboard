@@ -1,7 +1,7 @@
 <?php require_once 'app/views/templates/header.php'; ?>
 
 <div class="container mt-5">
-    <h2 class="mb-4 text-center">Reports Dashboard</h2>
+    <h2 class="mb-4 text-center fw-bold">Reports Dashboard</h2>
 
     <div class="card mb-4">
         <div class="card-header bg-primary text-white fw-bold">
@@ -35,9 +35,9 @@
         <?= htmlspecialchars($mostRemindersUser['username']); ?> has the most reminders (<?= $mostRemindersUser['total']; ?> reminders)
     </div>
 
-    <div class="card">
+    <div class="card mb-4">
         <div class="card-header bg-primary text-white fw-bold">
-            Total Logins
+            Total Logins by User
         </div>
         <div class="card-body p-0">
             <table class="table table-striped table-bordered mb-0">
@@ -58,16 +58,20 @@
             </table>
         </div>
     </div>
+
+    <div class="card mb-5">
+        <div class="card-header bg-primary text-white fw-bold">
+            Total Logins (Chart)
+        </div>
+        <div class="card-body">
+            <div class="text-center mb-3 fw-bold">Total Logins by User</div>
+            <canvas id="loginsChart" style="max-height: 400px;"></canvas>
+        </div>
+    </div>
+
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<div class="row mt-5">
-    <div class="col-md-12">
-        <h4 class="text-center">Total Logins by User</h4>
-        <canvas id="loginsChart"></canvas>
-    </div>
-</div>
 
 <script>
     const loginLabels = <?= json_encode(array_column($loginCounts, 'username')); ?>;
@@ -81,18 +85,23 @@
             datasets: [{
                 label: 'Total Logins',
                 data: loginCounts,
-                backgroundColor: 'rgba(75, 192, 192, 0.7)',
-                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(13, 110, 253, 0.7)', 
+                borderColor: 'rgba(13, 110, 253, 1)',
                 borderWidth: 1
             }]
         },
         options: {
+            plugins: {
+                legend: { display: false }
+            },
             scales: {
-                y: { beginAtZero: true }
+                y: {
+                    beginAtZero: true,
+                    ticks: { stepSize: 1 }
+                }
             }
         }
     });
 </script>
-
 
 <?php require_once 'app/views/templates/footer.php'; ?>
