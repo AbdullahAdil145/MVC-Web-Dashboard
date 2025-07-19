@@ -438,7 +438,7 @@ body.dark-mode .container h2 {
     color: #ffffff !important;
 }
 
-.custom-footer {
+body.dark-mode .custom-footer {
     background-color: #333333;
     color: #ffffff;
 }
