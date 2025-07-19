@@ -566,3 +566,19 @@ body.dark-mode canvas {
 body.dark-mode table.table thead th {
     color: #000000 !important;
 }
+
+body.dark-mode .accordion-item {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+  border: 1px solid #555555 !important;
+}
+
+body.dark-mode .accordion-button {
+  background-color: #444444 !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .accordion-button:not(.collapsed) {
+  background-color: #444444 !important;
+  color: #ffffff !important;
+}
