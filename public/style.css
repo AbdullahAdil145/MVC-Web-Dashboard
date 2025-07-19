@@ -520,3 +520,49 @@ body.dark-mode .reminder-input::placeholder {
 body.dark-mode .section-heading {
     color: #ffffff !important;
 }
+
+body.dark-mode .container {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .card {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+  border: 1px solid #555555 !important;
+}
+
+body.dark-mode .card-header {
+  background-color: #444444 !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode table.table {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode table.table th,
+body.dark-mode table.table td {
+  border: 1px solid #ffffff !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .table-light {
+  background-color: #444444 !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .alert-success {
+  background-color: #2e7d32 !important;
+  color: #ffffff !important;
+  border: none;
+}
+
+body.dark-mode canvas {
+  background-color: #333333 !important;
+}
+
+body.dark-mode table.table thead th {
+    color: #000000 !important;
+}

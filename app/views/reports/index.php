@@ -64,7 +64,6 @@
             Total Logins (Chart)
         </div>
         <div class="card-body">
-            <div class="text-center mb-3 fw-bold">Total Logins by User</div>
             <canvas id="loginsChart" style="max-height: 400px;"></canvas>
         </div>
     </div>
@@ -85,7 +84,7 @@
             datasets: [{
                 label: 'Total Logins',
                 data: loginCounts,
-                backgroundColor: 'rgba(13, 110, 253, 0.7)', 
+                backgroundColor: 'rgba(13, 110, 253, 0.7)',
                 borderColor: 'rgba(13, 110, 253, 1)',
                 borderWidth: 1
             }]
@@ -97,11 +96,26 @@
             scales: {
                 y: {
                     beginAtZero: true,
-                    ticks: { stepSize: 1 }
+                    ticks: {
+                        stepSize: 1,
+                        color: '#ffffff'
+                    },
+                    grid: {
+                        color: '#ffffff'
+                    }
+                },
+                x: {
+                    ticks: {
+                        color: '#ffffff'
+                    },
+                    grid: {
+                        color: '#ffffff'
+                    }
                 }
             }
         }
     });
 </script>
+
 
 <?php require_once 'app/views/templates/footer.php'; ?>
