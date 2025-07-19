@@ -3,6 +3,12 @@
 class Reports extends Controller {
 
     public function index() {
+
+        if (!isset($_SESSION['username']) || strtolower($_SESSION['username']) !== 'admin') {
+            header('Location: /login');
+            exit;
+        }
+
         
         $reminder = $this->model('Reminder');
         $user = $this->model('User');

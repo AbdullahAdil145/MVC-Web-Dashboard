@@ -55,7 +55,11 @@
                     </span>
                 </a>
                 <a href="/blog">Blog</a>
-                <a href="/reports">Reports</a>
+
+                <?php if (isset($_SESSION['username']) && strtolower($_SESSION['username']) === 'admin'): ?>
+                    <a href="/reports">Reports</a>
+                <?php endif; ?>
+
                 <a href="/logout">Logout</a>
 
                 <label class="switch" style="margin-bottom: 0;">
